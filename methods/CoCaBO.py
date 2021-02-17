@@ -86,6 +86,9 @@ class CoCaBO(CoCaBO_Base):
 
             self.ht_recommedations.append(ht_list)
 
+            print(', '.join(['%2d' % self.data[0][-1][i] for i in range(len(self.C))] +
+                            ['%+.4f' % self.data[0][-1][i] for i in range(len(self.C), self.nDim)]))
+
         df = pd.DataFrame(result_list, columns=["iter", "ht", "Reward",
                                                 "best_value", "mix_val",
                                                 "model_hp"])

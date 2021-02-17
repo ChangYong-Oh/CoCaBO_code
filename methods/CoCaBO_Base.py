@@ -90,11 +90,12 @@ class CoCaBO_Base(BaseBO):
         n_working = trials
         self.saving_path = saving_path
 
-        for i in range(trials):
+        for i in trials:
             print("Running trial: ", i)
             self.trial_num = i
-            np.random.seed(i)
-            random.seed(i)
+            # Commented out to have algorithm innated randomness
+            # np.random.seed(i)
+            # random.seed(i)
 
             df = self.runOptim(budget=budget, seed=i)
             best_vals.append(df['best_value'])
